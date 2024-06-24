@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UD.AAN - Jual Beli</title>
+    <style>
+        /* Style untuk tampilan website */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+        nav {
+            background-color: #444;
+            padding: 10px;
+        }
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        nav ul li {
+            display: inline;
+            margin-right: 10px;
+            position: relative; /* Untuk animasi */
+        }
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            display: inline-block;
+            position: relative; /* Memastikan elemen a memiliki konteks stacking */
+        }
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2px;
+            bottom: 0;
+            left: 0;
+            background-color: transparent; /* Awalnya transparan */
+            transform: scaleX(0);
+            transition: transform 0.3s ease, background-color 0.3s ease; /* Animasi transformasi dan latar belakang */
+            transform-origin: bottom right;
+        }
+        nav ul li a:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+            background-color: #ffc107; /* Warna latar saat dihover */
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .section-content {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            margin-bottom: 30px; /* Jarak antar bagian */
+            padding-bottom: 20px; /* Ruang di bagian bawah setiap bagian */
+            border-bottom: 1px solid #ccc; /* Garis bawah */
+        }
+        .section-content.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .section-content img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 10px auto; /* Posisi tengah */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        .section-content ul {
+            margin-top: 10px;
+            padding-left: 20px; /* Indentasi untuk daftar */
+        }
+        .contact {
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            margin-top: 20px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>UD.AAN - Jual Beli</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#paket-kue">PAKET BAHAN KUE</a></li>
+            <li><a href="#paket-sayur">PAKET SAYURAN</a></li>
+            <li><a href="#paket-kerupuk">PAKET KERUPUK</a></li>
+            <li><a href="#orderan-kelapa">ORDERAN KELAPA</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <section id="paket-kue" class="section-content">
+            <h2>PAKET BAHAN KUE</h2>
+            <p>Paket ini berisi berbagai bahan kue berkualitas untuk membuat kue lezat di rumah Anda.</p>
+            <div class="content-wrap">
+                <img src="kue.jpg" alt="Gambar Paket Bahan Kue">
+                <ul>
+                    <li>Tepung terigu</li>
+                    <li>Telur</li>
+                    <li>Gula pasir</li>
+                    <li>Mentega</li>
+                    <li>dll</li>
+                </ul>
+            </div>
+        </section>
+        <section id="paket-sayur" class="section-content">
+            <h2>PAKET SAYURAN</h2>
+            <p>Paket ini berisi sayuran segar dan gorengan yang siap saji untuk memenuhi kebutuhan masakan sehari-hari Anda.</p>
+            <div class="content-wrap">
+                <img src="sayur.jpg" alt="Gambar Paket Bahan Sayur">
+                <ul>
+                    <li>Sayur campur</li>
+                    <li>Sayur kuah sop</li>
+                    <li>Gorengan (tempe, tahu)</li>
+                    <li>Bisa beli terpisah juga</li>
+                </ul>
+            </div>
+        </section>
+        <section id="paket-kerupuk" class="section-content">
+            <h2>PAKET KERUPUK</h2>
+            <p>Paket kerupuk untuk menemani makanan Anda, dengan berbagai jenis kerupuk yang renyah dan lezat.</p>
+            <div class="content-wrap">
+                <img src="kerupuk.jpg" alt="Gambar Paket Kerupuk">
+                <ul>
+                    <li>Kerupuk seblak</li>
+                    <li>Kerupuk bungkus</li>
+                    <li>Bisa dibeli terpisah</li>
+                </ul>
+            </div>
+        </section>
+        <section id="orderan-kelapa" class="section-content">
+            <h2>ORDERAN KELAPA</h2>
+            <p>Kami juga menerima orderan untuk kelapa segar yang cocok untuk berbagai kebutuhan dapur Anda.</p>
+            <img src="kelapa.jpg" alt="Gambar Paket Kelapa">
+            <ul>
+                <li>Kelapa untuk remas santan</li>
+                <li>Kelapa untuk kue</li>
+            </ul>
+        </section>
+        <section id="about-us" class="section-content">
+            <h2>Tentang Kami</h2>
+            <p>UD.AAN adalah toko keluarga yang telah berdiri sejak masa sekolah dasar, didirikan oleh kedua orang tua saya di Pasar Pidie. Kami berkomitmen untuk menyediakan produk berkualitas dan pelayanan yang terbaik kepada pelanggan kami.</p>
+            <p>Saat ini, saya berniat untuk melanjutkan perjuangan orang tua saya dalam menjalankan toko ini, dengan harapan dapat terus melayani dan memenuhi kebutuhan masyarakat dengan baik.</p>
+            <p>Alamat Toko Kami: <a href="https://pasarpidie.googlemaps.com" target="_blank">Klik di sini</a></p>
+        </section>
+    </div>
+    <div class="contact">
+        <h2>Contact Us:</h2>
+        <p>WhatsApp: <a href="https://wa.me/6281252553589">081252553589</a>, <a href="https://wa.me/6281398367264">081398367264</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/aanftrh" target="_blank">@aanftrh</a></p>
+        <p>Link Lengkapnya: <a href="https://lynk.id/aanelkagenou" target="_blank">https://lynk.id/aanelkagenou</a></p>
+    </div>
+    <footer>
+        <p>&copy; 2024 UD.AAN.</p>
+    </footer>
+    <script>
+        // Animasi konten saat di-scroll
+        const sections = document.querySelectorAll('.section-content');
+
+        const observer = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, {
+            threshold: 0.5
+        });
+
+        sections.forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
